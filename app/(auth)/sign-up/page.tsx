@@ -1,5 +1,7 @@
+import AuthFrom from '../components/AuthFrom';
+
 const SignUp = () => {
-  return <div>Sign In</div>;
+  return <AuthFrom type="sign-up" />;
 };
 
 export default SignUp;
