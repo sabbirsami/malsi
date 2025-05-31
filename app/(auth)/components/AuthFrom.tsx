@@ -44,7 +44,7 @@ const AuthFrom = () => {
                 control={form.control}
                 name="username"
                 render={({ field }) => (
-                  <FormItem className="w-full">
+                  <FormItem className="w-full ">
                     <FormLabel>Username</FormLabel>
                     <FormControl>
                       <Input className="w-full" placeholder="shadcn" {...field} />

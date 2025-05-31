@@ -1,19 +1,28 @@
-import Link from 'next/link';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 import LogoIcon from '../icons/LogoIcon';
 
 const Navbar = () => {
-  const routes = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
-  ];
+  //   const routes = [
+  //     { name: 'Home', path: '/' },
+  //     { name: 'About Us', path: '/about' },
+  //     { name: 'Contact Us', path: '/contact' },
+  //     { name: 'Contact Us', path: '/contact' },
+  //   ];
   return (
     <header className="bg-white m-3 rounded-xl">
-      <div className="container mx-auto flex items-center justify-between px-4 py-3">
-        <div className="flex items-center space-x-2">
-          <LogoIcon className="h-8 w-auto" /> <span className="text-xl font-semibold">Malsi</span>
-        </div>
-        <nav className="">
+      <Sheet>
+        <div className="container mx-auto flex items-center justify-between px-4 lg:px-0 py-3">
+          <div className="flex items-center space-x-2">
+            <LogoIcon className="h-8 w-auto" /> <span className="text-xl font-semibold">Malsi</span>
+          </div>
+          {/* <nav className="">
           {routes?.map((route) => (
             <Link className="text-sm px-2 font-medium " key={route.name} href={route.path}>
               <span className="text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out">
@@ -21,18 +30,27 @@ const Navbar = () => {
               </span>
             </Link>
           ))}
-        </nav>
-        <div className="flex items-center space-x-2">
-          <button className="text-sm font-medium border py-3 px-5 rounded-full">
-            <span className="text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out">
-              Sign In
-            </span>
-          </button>
-          <button className="text-sm  font-medium capitalize border py-3 px-5 rounded-full bg-primary text-white">
-            <span className=" transition duration-150 ease-in-out">register</span>
-          </button>
+        </nav> */}
+
+          <div className="flex items-center space-x-2">
+            <SheetTrigger>
+              <button className="text-sm font-medium border py-2.5 px-5 bg-primary text-white rounded-full ">
+                <span className=" transition duration-150 ease-in-out">Get Started</span>
+              </button>
+            </SheetTrigger>
+          </div>
+
+          <SheetContent className="m-3 rounded-xl" style={{ height: 'calc(100vh - 1.5rem)' }}>
+            <SheetHeader>
+              <SheetTitle>Are you absolutely sure?</SheetTitle>
+              <SheetDescription>
+                This action cannot be undone. This will permanently delete your account and remove
+                your data from our servers.
+              </SheetDescription>
+            </SheetHeader>
+          </SheetContent>
         </div>
-      </div>
+      </Sheet>
     </header>
   );
 };
