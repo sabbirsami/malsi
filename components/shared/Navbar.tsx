@@ -1,3 +1,4 @@
+import AuthFrom from '@/app/(auth)/components/AuthForm';
 import {
   Sheet,
   SheetContent,
@@ -18,7 +19,7 @@ const Navbar = () => {
   return (
     <header className="bg-white m-3 rounded-xl">
       <Sheet>
-        <div className="container mx-auto flex items-center justify-between px-4 lg:px-0 py-3">
+        <div className="container mx-auto flex items-center justify-between px-4 lg:px-0 py-4">
           <div className="flex items-center space-x-2">
             <LogoIcon className="h-8 w-auto" /> <span className="text-xl font-semibold">Malsi</span>
           </div>
@@ -34,19 +35,22 @@ const Navbar = () => {
 
           <div className="flex items-center space-x-2">
             <SheetTrigger>
-              <button className="text-sm font-medium border py-2.5 px-5 bg-primary text-white rounded-full ">
+              <span className="text-sm font-medium border py-3 px-5 bg-primary text-white rounded-full ">
                 <span className=" transition duration-150 ease-in-out">Get Started</span>
-              </button>
+              </span>
             </SheetTrigger>
           </div>
 
-          <SheetContent className="m-3 rounded-xl" style={{ height: 'calc(100vh - 1.5rem)' }}>
+          <SheetContent
+            className="m-3 rounded-xl md:w-2xl border- border-gray-600"
+            style={{ height: 'calc(100vh - 1.5rem)' }}
+          >
             <SheetHeader>
-              <SheetTitle>Are you absolutely sure?</SheetTitle>
-              <SheetDescription>
-                This action cannot be undone. This will permanently delete your account and remove
-                your data from our servers.
-              </SheetDescription>
+              <SheetTitle></SheetTitle>
+              <SheetDescription></SheetDescription>
+              <div className="w-full h-full overflow-y-auto">
+                <AuthFrom type="sign-in" />
+              </div>
             </SheetHeader>
           </SheetContent>
         </div>
